@@ -16,7 +16,7 @@ namespace WebAPI2
             config.MapHttpAttributeRoutes();
             //EnableCorsAttribute attribute = new EnableCorsAttribute("*", "*", "GET");
             //config.EnableCors(attribute);
-            
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

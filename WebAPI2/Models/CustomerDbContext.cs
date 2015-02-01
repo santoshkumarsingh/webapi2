@@ -11,6 +11,7 @@ namespace WebAPI2.Models
         public CustomerDbContext()
             : base("name=CustomerDbContext")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Customer> Customers { get; set; }
